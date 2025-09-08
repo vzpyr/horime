@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %} - Feedback{% endblock %}
+{% block content %}
+<section class="center">
+  <form class="card form-card" method="post">
+    <h2>Feedback</h2>
+    <p class="muted">Your thoughts are important to us and help us keep improving. We store your IP and a timestamp for moderation.</p>
+    
+    <label class="field">
+      <span>Your feedback</span>
+      <textarea name="feedback" placeholder="Enter your feedback here..." required minlength="10" maxlength="500"></textarea>
+    </label>
+
+    {% if altcha_challenge %}
+    <div class="card card-center">
+      <altcha-widget
+        challengejson='{{ altcha_challenge | tojson }}'
+        hidefooter="true"
+        hidelogo="true">
+      </altcha-widget>
+    </div>
+    {% else %}
+    <p>Error loading security verification. Please refresh the page.</p>
+    {% endif %}
+
+    <button class="btn" type="submit">Submit Feedback</button>
+  </form>
+</section>
+{% endblock %}
+{% block scripts %}
+<script type="module" src="https://cdn.jsdelivr.net/npm/altcha/dist/altcha.min.js"></script>
+{% endblock %}

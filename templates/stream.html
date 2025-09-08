@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %} - {{ name }}{% endblock %}
+{% block content %}
+
+<article class="card hero-card">
+  <img class="hero-cover" src="{{ cover }}" alt="{{ name }} cover" width="320" height="450">
+  <div class="hero-meta">
+    <h1 class="hero-title">{{ name }}</h1>
+    <div class="hero-sub">{{ year }}</div>
+    <p class="hero-desc">{{ description | replace('\n', '<br>') | safe }}</p>
+  </div>
+</article>
+
+<nav class="episodes">
+  {% for ep in episodes %}
+    <a class="chip{% if ep==selected %} active{% endif %}"
+       href="{{ url_for('stream', name=name) }}?ep={{ ep|pct }}">{{ ep }}</a>
+  {% endfor %}
+</nav>
+
+<section class="card player-card">
+  <div class="player">
+    <iframe
+      src="{{ embed_url }}"
+      loading="lazy"
+      allow="autoplay; fullscreen; picture-in-picture"
+      referrerpolicy="no-referrer"
+      allowfullscreen
+      title="{{ name }} — {{ selected }}">
+    </iframe>
+  </div>
+</section>
+
+{% endblock %}

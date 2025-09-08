@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %} - DMCA{% endblock %}
+{% block content %}
+    <section class="center">
+        <div class="card form-card">
+            <h2>DMCA & Copyright</h2>
+            <p class="muted">
+                {{ SITE_NAME }} does not host or stream any video files. All content is hosted on third-party platforms. {{ SITE_NAME }} merely acts as a search and aggregation tool and does not control or store content from these providers.
+            </p>
+            <p class="muted">
+                We may use proxy services to relay video streams from these platforms. This ensures we act only as a technical intermediary and don't store video content ourselves. We have no control over the content, legality, or availability of videos hosted by third-party platforms. Responsibility for content lies with the original creators and the hosting platforms.
+            </p>
+            <h3>DMCA Safe Harbor</h3>
+            <p class="muted">
+                {{ SITE_NAME }} complies with the DMCA safe-harbor provisions. To qualify:
+            </p>
+            <ul>
+                <li>No video content is stored by {{ SITE_NAME }}; we only relay streams from external platforms.</li>
+                <li>We respond promptly to valid DMCA takedown notices.</li>
+                <li>We have no control over third-party content.</li>
+                <li>Rights holders have clear contact options to report copyright violations.</li>
+            </ul>
+            <h3>Submitting a DMCA Takedown Notice</h3>
+            <p class="muted">
+                To report an alleged copyright infringement, contact us using the support options available at the bottom of this page. Please include:
+            </p>
+            <ul>
+                <li>Full legal name of the copyright owner or authorized representative</li>
+                <li>Email address</li>
+                <li>City and country</li>
+                <li>URLs of the infringing content</li>
+                <li>Description of the copyrighted work that is allegedly infringed</li>
+                <li>Description of the infringement</li>
+                <li>Statement confirming the information is accurate and that you are authorized to act on behalf of the copyright owner</li>
+            </ul>
+            <p class="muted" style="margin-bottom: 0;">
+                Misrepresenting copyright claims can have legal consequences under Section 512(f) of the DMCA or similar laws. {{ SITE_NAME }} will promptly review valid reports and remove content when appropriate.
+            </p>
+        </div>
+    </section>
+{% endblock %}

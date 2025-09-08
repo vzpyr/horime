@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %} - Home{% endblock %}
+{% block content %}
+<section class="hero">
+  <h1>{{ SITE_NAME }}</h1>
+  <p class="lead">
+    Clean and fast anime streaming platform.
+  </p>
+  <div class="cta">
+    <a class="btn" href="{{ url_for('animes') }}">Browse Animes</a>
+    <a class="btn ghost" href="{{ url_for('request_anime') }}">Request an Anime</a>
+  </div>
+</section>
+
+<section class="container" style="margin-top: 32px; padding: 0px;">
+  <div class="card" style="padding: 24px;">
+    <h2 style="margin-top:0;">Latest Animes</h2>
+    <div class="grid">
+      {% for item in latest_animes %}
+        <a class="card anime-card" href="{{ url_for('stream', name=item.name) }}">
+          <div class="cover">
+            <img loading="lazy" src="{{ item.cover }}" alt="{{ item.name }} cover">
+          </div>
+          <div class="meta">
+            <div class="title">{{ item.name }}</div>
+            <div class="year">{{ item.anime.year }}</div>
+          </div>
+        </a>
+      {% endfor %}
+    {% if not latest_animes %}
+      <div class="empty">No animes available.</div>
+    {% endif %}
+    </div>
+  </div>
+</section>
+{% endblock %}

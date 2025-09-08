@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %} - Anime Request{% endblock %}
+{% block content %}
+<section class="center">
+  <form class="card form-card" method="post">
+    <h2>Anime Request</h2>
+    <p class="muted">Tell us what to add next. We store your IP and a timestamp for moderation.</p>
+    
+    <label class="field">
+      <span>Anime name</span>
+      <input type="text" name="title" placeholder="e.g. One Piece" required minlength="1" maxlength="100">
+    </label>
+
+    {% if altcha_challenge %}
+    <div class="card card-center">
+      <altcha-widget
+        challengejson='{{ altcha_challenge | tojson }}'
+        hidefooter="true"
+        hidelogo="true">
+      </altcha-widget>
+    </div>
+    {% else %}
+    <p>Error loading security verification. Please refresh the page.</p>
+    {% endif %}
+
+    <button class="btn" type="submit">Submit Request</button>
+  </form>
+</section>
+{% endblock %}
+{% block scripts %}
+<script type="module" src="https://cdn.jsdelivr.net/npm/altcha/dist/altcha.min.js"></script>
+{% endblock %}

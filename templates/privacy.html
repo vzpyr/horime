@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %} - Privacy Policy{% endblock %}
+{% block content %}
+    <section class="center">
+        <div class="card form-card">
+            <h2>Privacy Policy</h2>
+            <p class="muted">
+                Last updated: 27th August 2025
+            </p>
+            <h3>Data We Collect</h3>
+            <p class="muted">
+                {{ SITE_NAME }} collects minimal data to operate our service:
+            </p>
+            <ul>
+                <li><strong>Request logs:</strong> IP address and timestamp for every request to our site (automatically collected for all visits)</li>
+                <li><strong>Feedback data:</strong> IP address and timestamp when you submit feedback or content requests through our forms</li>
+            </ul>
+            <h3>Why We Collect This Data</h3>
+            <ul>
+                <li>Request logs: Technical operation, security, and abuse prevention</li>
+                <li>Feedback data: Moderation and responding to user submissions</li>
+            </ul>
+            <h3>Data Retention</h3>
+            <ul>
+                <li>Request logs are automatically deleted after 30 days</li>
+                <li>Feedback and request submissions are kept until reviewed and processed</li>
+            </ul>
+            <h3>Data Sharing</h3>
+            <p class="muted">
+                We do not sell, trade, or share your data with third parties. Data may only be disclosed if required by law.
+            </p>
+            <h3>Your Rights</h3>
+            <p class="muted">
+                You may request information about data we have collected or request deletion by contacting us through the support options at the bottom of this page.
+            </p>
+            <h3>Contact</h3>
+            <p class="muted" style="margin-bottom: 0;">
+                For privacy-related questions, use the support options available at the bottom of this page.
+            </p>
+        </div>
+    </section>
+{% endblock %}

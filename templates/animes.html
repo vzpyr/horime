@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %} - Animes{% endblock %}
+{% block content %}
+
+<form class="searchbar">
+  <input id="anime-search" type="text" placeholder="Search by name or year…" autocomplete="off">
+</form>
+
+<section class="grid" id="anime-results">
+  {% if items %}
+    {% for item in items %}
+      <a class="card anime-card" data-name="{{ item.name|lower }}" data-year="{{ item.year }}" href="{{ url_for('stream', name=item.name) }}">
+        <div class="cover">
+          <img loading="lazy" src="{{ item.cover }}" alt="{{ item.name }} cover">
+        </div>
+        <div class="meta">
+          <div class="title">{{ item.name }}</div>
+          <div class="year">{{ item.year }}</div>
+        </div>
+      </a>
+    {% endfor %}
+  {% else %}
+    <div class="empty">No results.</div>
+  {% endif %}
+</section>
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='search.js') }}"></script>
+{% endblock %}
+{% endblock %}

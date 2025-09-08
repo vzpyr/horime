@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %} - Terms of Service{% endblock %}
+{% block content %}
+   <section class="center">
+       <div class="card form-card">
+           <h2>Terms of Service</h2>
+           <p class="muted">
+               Last updated: 27th August 2025
+           </p>
+           <h3>Acceptance of Terms</h3>
+           <p class="muted">
+               By using {{ SITE_NAME }}, you agree to these terms. If you don't agree, please don't use our service.
+           </p>
+           <h3>Our Service</h3>
+           <p class="muted">
+               {{ SITE_NAME }} is a search and aggregation tool that helps users find anime content hosted on third-party platforms. We do not host, store, or control any video content. All content is provided by external platforms, and we act only as a technical intermediary.
+           </p>
+           <h3>Prohibited Uses</h3>
+           <p class="muted">You may not:</p>
+           <ul>
+               <li>Use automated tools, bots, or scrapers to access our service</li>
+               <li>Attempt to overwhelm our servers or disrupt our service</li>
+               <li>Submit false, misleading, or spam content through our feedback/request forms</li>
+               <li>Use our service for any illegal activity</li>
+               <li>Circumvent any technical measures we use to protect our service</li>
+           </ul>
+           <h3>Age Requirements</h3>
+           <p class="muted">
+               You must be at least 13 years old to use {{ SITE_NAME }}. Users under 18 should have parental supervision when accessing content.
+           </p>
+           <h3>Content Disclaimer</h3>
+           <p class="muted">
+               We have no control over third-party content and make no guarantees about availability, quality, accuracy, or legality. You are responsible for your own use of any content accessed through our service.
+           </p>
+           <h3>Service Availability</h3>
+           <p class="muted">
+               {{ SITE_NAME }} is provided "as-is" without warranties. We may interrupt, suspend, or terminate the service at any time without notice.
+           </p>
+           <h3>Termination</h3>
+           <p class="muted">
+               We may block access for users who violate these terms or misuse our service.
+           </p>
+           <h3>Contact</h3>
+           <p class="muted" style="margin-bottom: 0;">
+               Questions about these terms? Contact us through the support options at the bottom of this page.
+           </p>
+       </div>
+   </section>
+{% endblock %}

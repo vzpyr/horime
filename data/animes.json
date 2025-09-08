@@ -1,0 +1,9 @@
+{
+  "Example": {
+    "year": "0",
+    "description": "Example",
+    "content": {
+      "Example": "https://example.com/"
+    }
+  }
+}

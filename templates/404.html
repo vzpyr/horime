@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %} - Not found{% endblock %}
+{% block content %}
+<section class="center">
+  <div class="card form-card">
+    <h2>Not found</h2>
+    <p class="muted">The page you're looking for doesn’t exist.</p>
+    <a class="btn ghost" href="{{ url_for('animes') }}">Back to Animes</a>
+  </div>
+</section>
+{% endblock %}

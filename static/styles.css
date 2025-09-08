@@ -1,0 +1,140 @@
+:root {
+  --bg:#0b0f12; --card:#12181d; --border:#1f2a33; --text:#e5e7eb;
+  --muted:#9aa4ad; --accent:#00ff00; --accent-2:#79ff79;
+  --radius:16px; --container:1100px; --shadow:0 8px 28px rgba(0,0,0,.35);
+}
+
+/* Reset & Base */
+* { box-sizing:border-box }
+html, body { height:100% }
+body {
+  margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji",sans-serif;
+  background:var(--bg); color:var(--text);
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+}
+button, input, textarea, select { font:inherit; color:inherit; font-size:1rem }
+
+/* Layout */
+.container { max-width:var(--container); margin:0 auto; padding:24px }
+.center { display:flex; align-items:center; justify-content:center; min-height:46vh }
+
+/* Header */
+.site-header {
+  position:sticky; top:0; z-index:10;
+  background:linear-gradient(to bottom, rgba(11,15,18,.9), rgba(11,15,18,.6) 60%, transparent);
+  backdrop-filter:saturate(140%) blur(8px);
+  border-bottom:1px solid var(--border);
+}
+.header-inner { display:flex; align-items:center; justify-content:space-between }
+.logo img { width:150px; height:41px; object-fit:contain; display:block }
+.nav { display:flex; gap:16px }
+.nav-link {
+  padding:10px 14px; border:1px solid transparent; border-radius:999px;
+  color:var(--text); text-decoration:none; opacity:.9;
+  transition:border-color .25s ease,color .25s ease,opacity .25s ease;
+}
+.nav-link:hover { border-color:var(--border); opacity:1 }
+.nav-link.active { border-color:var(--accent); color:var(--accent) }
+
+/* Footer */
+.site-footer { border-top:1px solid var(--border); margin-top:32px }
+.footer-inner { display:flex; align-items:center; justify-content:space-between; padding:12px 0 }
+.footer-link { color:var(--muted); text-decoration:none; margin-left:16px }
+.footer-link:hover { color:var(--text) }
+
+/* Hero */
+.hero { padding:48px 0 12px }
+.hero h1 { font-size:44px; margin:0 0 10px }
+.lead { color:var(--muted); font-size:18px; margin:0 0 22px }
+.cta { display:flex; gap:12px }
+
+/* Buttons */
+.btn {
+  display:inline-block; padding:12px 18px; border-radius:12px; border:1px solid var(--accent);
+  background:linear-gradient(180deg,var(--accent),var(--accent-2));
+  color:#0a0f0d; font-weight:700; text-decoration:none;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.btn:hover { transform:scale(1.05); box-shadow:0 6px 20px rgba(0,0,0,.4) }
+.btn.ghost { background:transparent; color:var(--accent); border-color:var(--accent) }
+
+/* Cards */
+.card {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow:var(--shadow);
+}
+.card-center {
+  display:flex; justify-content:center; align-items:center;
+  padding:16px; border-radius:var(--radius); margin:16px 0; box-shadow:var(--shadow);
+}
+.hero-card { display:grid; grid-template-columns:220px 1fr; gap:18px; padding:18px; margin-top:18px }
+.hero-cover { width:100%; height:300px; object-fit:cover; border-radius:12px }
+.hero-meta { display:flex; flex-direction:column; gap:8px }
+.hero-title { margin:0; font-size:28px }
+.hero-sub { color:var(--muted) }
+.hero-desc { color:var(--text); opacity:.9; line-height:1.5 }
+
+/* Flash */
+.flash-wrap { margin:18px 0 }
+.flash { padding:12px 14px; border-radius:10px; border:1px solid var(--border) }
+.flash.success { border-color:var(--accent); color:var(--accent) }
+.flash.error { border-color:#ff6b6b; color:#ff6b6b }
+
+/* Search */
+.searchbar { display:flex; gap:10px; margin:18px 0 8px }
+.searchbar input {
+  flex:1; padding:12px 14px; border-radius:12px; border:1px solid var(--border);
+  background:#0e1419; color:var(--text); outline:none; font:inherit; font-size:1rem;
+}
+.searchbar input:focus { border-color:var(--accent) }
+
+/* Grid & Anime cards */
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:16px; margin-top:16px }
+.anime-card {
+  display:block; overflow:hidden; text-decoration:none;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.anime-card:hover { transform:scale(1.05); box-shadow:0 6px 20px rgba(0,0,0,.4) }
+.anime-card .cover { height:260px; background:#0e1419; border-bottom:1px solid var(--border) }
+.anime-card img { width:100%; height:100%; object-fit:cover; display:block }
+.anime-card .meta { padding:10px 12px }
+.anime-card .title { font-weight:600; font-size:15px; color:var(--text); line-height:1.2 }
+.anime-card .year { color:var(--muted); font-size:13px; margin-top:4px }
+
+/* Episodes & Chips */
+.episodes { display:flex; gap:8px; overflow:auto; padding:14px 2px; margin-top:10px }
+.chip {
+  display:inline-block; padding:8px 12px; border-radius:999px; border:1px solid var(--border);
+  text-decoration:none; color:var(--text); white-space:nowrap; background:#0e1419;
+  transition:border-color .25s ease,color .25s ease,background .25s ease;
+}
+.chip:hover { border-color:var(--accent) }
+.chip.active { border-color:var(--accent); color:var(--accent) }
+
+/* Player */
+.player-card { padding:0; overflow:hidden }
+.player { position:relative; aspect-ratio:16/9; width:100% }
+.player iframe { position:absolute; inset:0; width:100%; height:100%; border:0; border-radius:var(--radius); background:#000 }
+
+/* Forms */
+.form-card { max-width:520px; width:100%; padding:22px }
+.form-card h2 { margin:0 0 8px }
+.field { display:flex; flex-direction:column; gap:6px; margin:12px 0 16px }
+.field input, .field textarea {
+  padding:12px 14px; border-radius:12px; border:1px solid var(--border);
+  background:#0e1419; color:var(--text); outline:none;
+}
+.field input:focus, .field textarea:focus { border-color:var(--accent) }
+.field textarea { font:inherit; font-size:1rem; min-height:120px; resize:vertical }
+
+/* Typography & Helpers */
+.muted { color:var(--muted) }
+.empty { color:var(--muted); padding:32px 0 }
+ul li { color:var(--muted); margin-bottom:6px }
+
+/* Responsive */
+@media (max-width:760px) {
+  .hero-card { grid-template-columns:1fr }
+  .hero-cover { height:220px }
+  .container { padding:18px }
+}
