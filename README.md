@@ -1,5 +1,5 @@
 # horime
-simple anime streaming platform (similar to anicr*sh or animek*i, where you don't directly host the content) 
+simple anime streaming platform (similar to anicr\*sh or animek\*i, where you don't directly host the content) 
 
 # features
 - stream anime episodes by entering embed links from hosting platforms
