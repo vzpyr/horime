@@ -13,7 +13,7 @@ simple anime streaming platform (similar to anicr\*sh or animek\*i, where you do
 # how to use
 1. install python3
 2. install requirements: `pip install -r requirements.txt`
-3. add environment variables in .env.example
+3. set all environment variables in `.env.example`
 4. rename the `.env.example` to `.env`
 5. start the app: `python3 app.py`
 
