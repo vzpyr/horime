@@ -16,7 +16,8 @@ simple anime streaming platform (similar to anicr\*sh or animek\*i, where you do
 2. install requirements: `pip install -r requirements.txt`
 3. set all environment variables in `.env.example`
 4. rename the `.env.example` to `.env`
-5. start the app: `python3 app.py`
+5. fill `/data/animes.json` with your animes and `/static/covers` with anime covers (.png)
+6. start the app: `python3 app.py`
 
 ## required environment variables
 - `ALTCHA_HMAC_KEY`: hmac key for altcha (random 32-byte string)
